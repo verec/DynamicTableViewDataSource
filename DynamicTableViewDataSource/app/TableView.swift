@@ -57,8 +57,7 @@ extension TableView {
 
             let ip = $0
 
-            if ip.row < Storage.modelSource.count {
-                let model = Storage.modelSource[ip.row]
+            if let model = Storage.modelSource[ip.row] as? SampleModel where ip.row < Storage.modelSource.count{
                 model.expanded = false
                 return true
             }
@@ -69,8 +68,9 @@ extension TableView {
     func setupToggleSingleSelection() {
         self.singleSelection?.toggleSelection = {
             let ip = $0
-            let model = Storage.modelSource[ip.row]
-            model.expanded = !model.expanded
+            if let model = Storage.modelSource[ip.row] as? SampleModel {
+                model.expanded = !model.expanded
+            }
         }
     }
 }
@@ -82,9 +82,9 @@ extension TableView : UITableViewDataSource {
         let cell = self.dequeueReusableCellWithIdentifier(Parameters.cellIdentifier, forIndexPath: indexPath) as! TableViewCell
 
         let index   = indexPath.row
-        let model   = Storage.modelSource[index]
-        cell.min    = self.collaspedRowHeight()
-        cell.max    = self.expandedHeight()
+        let model   = Storage.modelSource[index] as! SampleModel
+        cell.min    = self.collaspedRowHeight(indexPath)
+        cell.max    = self.expandedHeight(indexPath)
         cell.model  = model
 
         func tapped() {
@@ -109,20 +109,22 @@ extension TableView : UITableViewDataSource {
 
 extension TableView : UITableViewDelegate {
 
-    func collaspedRowHeight() -> CGFloat {
+    func collaspedRowHeight(indexPath:  NSIndexPath) -> CGFloat {
         return 48.0
     }
 
-    func expandedHeight() -> CGFloat {
-        return collaspedRowHeight() * 3.0
+    func expandedHeight(indexPath:  NSIndexPath) -> CGFloat {
+        return collaspedRowHeight(indexPath) * 3.0
     }
 
     func tableView(             tableView:  UITableView
     ,   heightForRowAtIndexPath indexPath:  NSIndexPath) -> CGFloat {
-        let storage = Storage.modelSource
-        let model = storage[indexPath.row]
 
-        return model.expanded ? expandedHeight() : collaspedRowHeight()
+        if let model = Storage.modelSource[indexPath.row] as? SampleModel {
+            return model.expanded ? expandedHeight(indexPath) : collaspedRowHeight(indexPath)
+        }
+
+        return collaspedRowHeight(indexPath)
     }
 }
 

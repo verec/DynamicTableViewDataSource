@@ -10,21 +10,3 @@ import Foundation
 
 protocol ModelObject {
 }
-
-//class Model : ModelObject {
-////    var expanded:Bool = false
-////    var rank:Int = -1
-////
-////    init(rank:Int) {
-////        self.rank = rank
-////    }
-//}
-//
-class SampleModel : ModelObject {
-    var expanded:Bool = false
-    var rank:Int = -1
-
-    init(rank:Int) {
-        self.rank = rank
-    }
-}

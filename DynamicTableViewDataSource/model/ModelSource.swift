@@ -10,20 +10,37 @@ import Foundation
 
 class ModelSource {
 
-    var models:[Model] = []
+    var model:[ModelObject] = []
+    var cache:[ModelObject] = []
+
+    typealias ModelFilter = ([ModelObject]) -> ([ModelObject])
+
+    var filter:ModelFilter?
 
     var count:Int {
-        return models.count
+        return cache.count
     }
 
-    subscript(index:Int) -> Model {
-        return models[index]
+    subscript(index:Int) -> ModelObject {
+        return cache[index]
     }
 
-    init() {
+    func generateDeltas(filtered:[ModelObject]) {
+    }
 
-        for rank in 0 ..< 50 {
-            models.append(Model(rank: rank))
+    func applyFilter() {
+        if let result = self.filter?(model) {
+            generateDeltas(result)
+            cache = result
+        } else {
+            cache = model
         }
+    }
+    
+    init() {
+        for rank in 0 ..< 50 {
+            model.append(SampleModel(rank: rank))
+        }
+        applyFilter()
     }
 }

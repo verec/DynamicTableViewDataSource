@@ -16,10 +16,12 @@
 		F37EADC81C1C3DED008DAAEF /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37EADC71C1C3DED008DAAEF /* CGRect.swift */; };
 		F37EADCC1C1C3DF5008DAAEF /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37EADCA1C1C3DF5008DAAEF /* Storage.swift */; };
 		F37EADCD1C1C3DF5008DAAEF /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37EADCB1C1C3DF5008DAAEF /* Views.swift */; };
-		F37EADD11C1C3DFD008DAAEF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37EADCF1C1C3DFD008DAAEF /* Model.swift */; };
+		F37EADD11C1C3DFD008DAAEF /* ModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37EADCF1C1C3DFD008DAAEF /* ModelObject.swift */; };
 		F37EADD21C1C3DFD008DAAEF /* ModelSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37EADD01C1C3DFD008DAAEF /* ModelSource.swift */; };
 		F37EADD61C1C3E05008DAAEF /* MultiDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37EADD41C1C3E05008DAAEF /* MultiDispatch.swift */; };
 		F37EADD71C1C3E05008DAAEF /* TableViewSingleSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37EADD51C1C3E05008DAAEF /* TableViewSingleSelection.swift */; };
+		F37EADD91C1C4FDD008DAAEF /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37EADD81C1C4FDD008DAAEF /* SampleModel.swift */; };
+		F37EADDB1C1C53AF008DAAEF /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37EADDA1C1C53AF008DAAEF /* Binder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +55,12 @@
 		F37EADC71C1C3DED008DAAEF /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		F37EADCA1C1C3DF5008DAAEF /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F37EADCB1C1C3DF5008DAAEF /* Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
-		F37EADCF1C1C3DFD008DAAEF /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F37EADCF1C1C3DFD008DAAEF /* ModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObject.swift; sourceTree = "<group>"; };
 		F37EADD01C1C3DFD008DAAEF /* ModelSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelSource.swift; sourceTree = "<group>"; };
 		F37EADD41C1C3E05008DAAEF /* MultiDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiDispatch.swift; sourceTree = "<group>"; };
 		F37EADD51C1C3E05008DAAEF /* TableViewSingleSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSingleSelection.swift; sourceTree = "<group>"; };
+		F37EADD81C1C4FDD008DAAEF /* SampleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
+		F37EADDA1C1C53AF008DAAEF /* Binder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 			children = (
 				F37EADC21C1C3DE4008DAAEF /* TableView.swift */,
 				F37EADC31C1C3DE4008DAAEF /* TableViewCell.swift */,
+				F37EADD81C1C4FDD008DAAEF /* SampleModel.swift */,
+				F37EADDA1C1C53AF008DAAEF /* Binder.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -148,7 +154,7 @@
 		F37EADCE1C1C3DFD008DAAEF /* model */ = {
 			isa = PBXGroup;
 			children = (
-				F37EADCF1C1C3DFD008DAAEF /* Model.swift */,
+				F37EADCF1C1C3DFD008DAAEF /* ModelObject.swift */,
 				F37EADD01C1C3DFD008DAAEF /* ModelSource.swift */,
 			);
 			path = model;
@@ -296,13 +302,15 @@
 				F37EADD71C1C3E05008DAAEF /* TableViewSingleSelection.swift in Sources */,
 				F37EAD921C1C3D08008DAAEF /* AppDelegate.swift in Sources */,
 				F37EADD61C1C3E05008DAAEF /* MultiDispatch.swift in Sources */,
+				F37EADDB1C1C53AF008DAAEF /* Binder.swift in Sources */,
 				F37EADC51C1C3DE4008DAAEF /* TableViewCell.swift in Sources */,
 				F37EADC81C1C3DED008DAAEF /* CGRect.swift in Sources */,
 				F37EADCD1C1C3DF5008DAAEF /* Views.swift in Sources */,
 				F37EADC41C1C3DE4008DAAEF /* TableView.swift in Sources */,
+				F37EADD91C1C4FDD008DAAEF /* SampleModel.swift in Sources */,
 				F37EADC01C1C3DD9008DAAEF /* Top.swift in Sources */,
 				F37EADCC1C1C3DF5008DAAEF /* Storage.swift in Sources */,
-				F37EADD11C1C3DFD008DAAEF /* Model.swift in Sources */,
+				F37EADD11C1C3DFD008DAAEF /* ModelObject.swift in Sources */,
 				F37EADD21C1C3DFD008DAAEF /* ModelSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

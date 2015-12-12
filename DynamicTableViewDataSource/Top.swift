@@ -42,5 +42,19 @@ struct Top {
     static var mainView                 =   defaultView
     static let defaultWindow            =   DefaultWindow(frame: UIScreen.mainScreen().bounds)
     static let defaultController        =   DefaultController()
+
+    static func wireToAppDelegate(inout window: UIWindow?, @noescape customise: () -> ()) {
+        /// This creates a default blank view that is fullscreen and supports
+        /// all orientations that the root view controller allows for -- see
+        /// above.
+
+        Top.defaultWindow.rootViewController = Top.defaultController
+        Top.defaultController.view = Top.mainView
+        window = Top.defaultWindow
+
+        customise()
+
+        Top.defaultWindow.makeKeyAndVisible()
+    }
 }
 

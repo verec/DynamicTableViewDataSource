@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class SampleModel : ModelObject {
+    var expanded:Bool = false
+    var rank:Int = -1
+
+    init(rank:Int) {
+        self.rank = rank
+    }
+}

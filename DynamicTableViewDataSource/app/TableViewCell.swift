@@ -20,9 +20,9 @@ class TableViewCell : UITableViewCell {
     var min:CGFloat = 10.0
     var max:CGFloat = 20.0
 
-    var model:Model? {
+    var model:ModelObject? {
         didSet {
-            if let m = model {
+            if let m = model as? SampleModel {
                 label.text = "Model #\(m.rank)"
             } else {
                 label.text = "???"
@@ -33,7 +33,7 @@ class TableViewCell : UITableViewCell {
     }
 
     func applyColor() {
-        if let m = model {
+        if let m = model as? SampleModel {
 
             let color   = m.rank & 1 == 0
                         ? UIColor.yellowColor().colorWithAlphaComponent(0.5)
